@@ -1,0 +1,48 @@
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+  <div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="px-8 py-6 mt-4 text-left bg-white shadow-lg">
+      <h3 class="text-2xl font-bold text-center">Account Login</h3>
+        <div class="mt-4">
+          <div>
+            <input type="text" placeholder="First Name" formControlName="firstName"
+                   class="input-standard">
+            <div *ngIf="submitted && formControl.firstName.errors" class="text-danger">
+              <p *ngIf="formControl.firstName.errors.required" class="input-invalid">First Name is required.</p>
+            </div>
+          </div>
+          <div>
+            <input type="text" placeholder="Last Name" formControlName="lastName"
+                   class="input-standard">
+            <div *ngIf="submitted && formControl.lastName.errors" class="text-danger">
+              <p *ngIf="formControl.lastName.errors.required" class="input-invalid">Last Name is required.</p>
+            </div>
+          </div>
+          <div>
+            <input type="text" placeholder="Email" formControlName="email"
+                   class="input-standard">
+            <div *ngIf="submitted && formControl.email.errors" class="text-danger">
+              <p *ngIf="formControl.email.errors.required" class="input-invalid">Email is required.</p>
+              <p *ngIf="formControl.email.errors.email" class="input-invalid">Email is invalid.</p>
+            </div>
+          </div>
+          <div class="mt-4">
+              <input type="password" placeholder="Password" formControlName="password"
+                     class="input-standard">
+            <div *ngIf="submitted && formControl.password.errors" class="text-danger">
+              <p *ngIf="formControl.password.errors.required" class="input-invalid">Password is required.</p>
+              <p *ngIf="formControl.password.errors.minlength" class="input-invalid">
+                Password must be a minimum of 8 characters in length.</p>
+              <p *ngIf="formControl.password.errors.pattern" class="input-invalid">
+                Password must contain lower and uppercase letter.</p>
+              <p *ngIf="formControl.password.errors.notContainUserName" class="input-invalid">
+                Password cannot contain First Name or Last Name.</p>
+            </div>
+          </div>
+          <div class="flex items-baseline justify-between">
+            <button type="submit" class="button-standard">Login</button>
+          </div>
+        </div>
+    </div>
+  </div>
+</form>
+
