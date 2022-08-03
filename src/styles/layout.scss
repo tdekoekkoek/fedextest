@@ -1,0 +1,16 @@
+
+.app-nav {
+  @apply font-sans flex flex-col text-center
+  sm:flex-row
+  sm:text-left
+  sm:justify-between py-4 px-6 bg-white shadow
+  sm:items-baseline w-full
+}
+
+.home-link {
+  @apply text-2xl no-underline
+}
+
+.nav-link {
+  @apply text-lg no-underline ml-2
+}
