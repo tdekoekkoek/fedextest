@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
         email: this.loginForm.value.email,
         password: this.loginForm.value.password,
       }).subscribe(result => {
-        alert(result)
+        alert('You have successfully logged in')
       });
     }
   }
